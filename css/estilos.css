@@ -1,0 +1,20 @@
+/*
+h1{
+    color:red;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+}
+#primerH1{
+    color:red;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline; 
+}*/
+.H1rojo{
+    color:red;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+    background-color:rgb(173, 84, 84);
+}
