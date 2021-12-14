@@ -22,7 +22,7 @@ class ClientesController extends Controller
         //metodo para saber si una key esta generada
         $request->has('cuit');
         */
-        
+
         //$cliente = DB::select('SELECT * FROM cliente');
         $clientes = DB::table("cliente")
         ->select("*")
@@ -46,6 +46,11 @@ class ClientesController extends Controller
     public function create()
     {
         //
+        $parametros = [
+            "titulo" => "Esta es el formulario de Alta de Cliente"
+        ];
+
+        return view("clientes.crear-cliente",$parametros);
     }
 
     /**
@@ -56,7 +61,14 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $razonSocial = $request->post("razon_social");
+        $cuit = $request->post("cuit");
+
+        //DB::insert("INSERT INTO cliente (razon_social,cuit) VALUES (?,?)",[$razonSocial,$cuit]);
+        DB::table("cliente")->insert([
+            "razon_social" => $razonSocial,
+            "cuit" => $cuit
+        ]);
     }
 
     /**

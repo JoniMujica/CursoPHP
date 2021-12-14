@@ -47,6 +47,12 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        //esto para cambiar el nombre de la ruta -- traducir al español
+        /* si cambio esto, no puedo hacer post
+        Route::resourceVerbs([
+            "create" => "crear"
+        ]);*/
     }
 
     /**
