@@ -37,4 +37,9 @@ Route::get('/clientes/create',[TecnicosController::class,'create']);
 Route::post('/clientes',[TecnicosController::class,'store']);
 Route::get('/clientes/{id}',[ClientesController::class,'show']); //la variable {id} debe conincidir con el parametro del metodo show($id)
 Route::delete('/clientes',[ClientesController::class,'destroy']);*/
-Route::resource('/clientes',ClientesController::class); //realiza las rutas automaticamente
+
+
+
+//Route::resource('/clientes',ClientesController::class); //realiza las rutas automaticamente
+//Route::resource('/clientes',ClientesController::class)->except(['index','destroy','show']); //no permite la cracion de los metodos mencionados
+Route::resource('/clientes',ClientesController::class)->only(['index','destroy','show']); //solo permite crear esas rutas
