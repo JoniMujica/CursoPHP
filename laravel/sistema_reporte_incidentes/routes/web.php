@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\TecnicosController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,17 @@ Route::get('/', function () {
     //return view('welcome'); //view es de laravel
     //return '<h1>Hola mundo</h1>';    
 });
+/*
 Route::get('/tecnicos',[TecnicosController::class,'index']); //llamado a un determinado controlador ["Controllador:class,'metodo']
 Route::get('/tecnicos/create',[TecnicosController::class,'create']);
 Route::post('/tecnicos',[TecnicosController::class,'store']);
-//Route::put("/tecnicos",[TecnicosController::class,'store']
+//Route::put("/tecnicos",[TecnicosController::class,'store']*/
+
+
+/*
+Route::get('/clientes',[TecnicosController::class,'index']); //llamado a un determinado controlador ["Controllador:class,'metodo']
+Route::get('/clientes/create',[TecnicosController::class,'create']);
+Route::post('/clientes',[TecnicosController::class,'store']);
+Route::get('/clientes/{id}',[ClientesController::class,'show']); //la variable {id} debe conincidir con el parametro del metodo show($id)
+Route::delete('/clientes',[ClientesController::class,'destroy']);*/
+Route::resource('/clientes',ClientesController::class); //realiza las rutas automaticamente
