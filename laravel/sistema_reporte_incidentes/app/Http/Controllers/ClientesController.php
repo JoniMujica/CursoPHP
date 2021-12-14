@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientesController extends Controller
 {
@@ -11,9 +12,30 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $razonSocial = $request->get('razon_social');
+        $cuit = $request->get('cuit');
+        
+
+        /*
+        //metodo para saber si una key esta generada
+        $request->has('cuit');
+        */
+        
+        //$cliente = DB::select('SELECT * FROM cliente');
+        $clientes = DB::table("cliente")
+        ->select("*")
+        ->where("razon_social","like","%".$razonSocial."%")
+        //->orWhere("cuit","like",$cuit."%")
+        ->where("cuit","like",$cuit."%")
+        ->get(); //forma 2
+        $parametros = [
+            "arrayClientes" => $clientes,
+            "titulo" => "Esta es la tabla de clientes"
+        ];
+        return view("clientes.clientes",$parametros); //pasa mas de un parametro atraves de un array KEY
+        //return $razonSocial;
     }
 
     /**

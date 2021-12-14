@@ -40,6 +40,6 @@ Route::delete('/clientes',[ClientesController::class,'destroy']);*/
 
 
 
-//Route::resource('/clientes',ClientesController::class); //realiza las rutas automaticamente
+Route::resource('/clientes',ClientesController::class); //realiza las rutas automaticamente
 //Route::resource('/clientes',ClientesController::class)->except(['index','destroy','show']); //no permite la cracion de los metodos mencionados
-Route::resource('/clientes',ClientesController::class)->only(['index','destroy','show']); //solo permite crear esas rutas
+//Route::resource('/clientes',ClientesController::class)->only(['index','destroy','show']); //solo permite crear esas rutas
