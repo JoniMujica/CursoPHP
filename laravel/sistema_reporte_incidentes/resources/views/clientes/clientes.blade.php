@@ -1,4 +1,12 @@
 <h1>{{$titulo}}</h1> <!-- $titulo es la key del array la cual pase como parametro, debe ser igual-->
+
+<form method="GET" action="clientes" >
+    <label for="">Razon social</label><input type="text" name="razon_social"><br>
+    <label for="">CUIT</label><input type="text" name="cuit"><br>
+    <button type="submit">Filtrar</button>
+</form>
+
+
 <table>
     <thead>
         <tr>
