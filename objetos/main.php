@@ -11,7 +11,8 @@
     echo $unHogar->getDireccion();
     $unHogar->agregarHabitante($unaPersona);
     $unHogar->agregarHabitante($otraPersona);
-
+    echo "<br>";
+    echo $unHogar->obtenerHabitantes(); //ejercicio
     //var_dump($unHogar->)
     echo "<br>";
     echo "<br>";

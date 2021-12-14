@@ -29,12 +29,24 @@
                 return $this;
         }
         public function agregarHabitante($unaPersona)
-        {
+        { 
             array_push($this->habitantes,$unaPersona);
         }
         public function cantidadHabitantes()
         {
             return count($this->habitantes);
+        }
+
+        //EJERCICIO 
+        public function obtenerHabitantes(){
+            $stringDevolver = "";
+            $i = 1;
+            foreach ($this->habitantes as $habitante)
+            {
+                $stringDevolver .= "El habitante ".$i." es: ".$habitante->getNombre()." ".$habitante->getApellido() ."<br>";
+                $i++;
+            }
+            return $stringDevolver;
         }
     }
 ?>
