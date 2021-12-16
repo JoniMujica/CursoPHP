@@ -49,10 +49,10 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         //esto para cambiar el nombre de la ruta -- traducir al español
-        /* si cambio esto, no puedo hacer post
+        /* si cambio esto, no puedo hacer post*/
         Route::resourceVerbs([
             "create" => "crear"
-        ]);*/
+        ]);
     }
 
     /**
